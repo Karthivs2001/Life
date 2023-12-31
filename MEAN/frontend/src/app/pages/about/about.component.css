@@ -1,0 +1,155 @@
+/* Global container styles */
+.about-us-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    /* background-image: url('path-to-your-food-image.jpg'); */
+    background-size: cover;
+    color: #fff; /* Text color */
+}
+
+/* Section styles */
+.about-us-container > div {
+    margin-bottom: 20px;
+}
+
+/* Heading styles */
+.about-us-container h2 {
+    font-size: 2em;
+    color: #ffcc00; /* Heading color */
+    font-weight: bold;
+}
+
+/* Paragraph styles */
+.about-us-container p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #fff; /* Text color */
+}
+
+/* List styles */
+.about-us-container ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* List item styles */
+.about-us-container li {
+    font-size: 1.2em;
+    color: #fff; /* Text color */
+    margin-bottom: 8px;
+}
+
+/* Contact section styles */
+.about-us-container div:last-child {
+    background-color: rgba(255, 99, 71, 0.7); /* Background color with alpha for transparency */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.about-us-container div:last-child h2 {
+    color: #fff; /* Heading color */
+}
+
+.about-us-container div:last-child p {
+    font-size: 1.2em;
+    color: #fff; /* Text color */
+}
+
+/* feedback.component.css */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .details {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff; /* Adjust the background color as needed */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .radio-group {
+    margin-bottom: 16px;
+  }
+  
+  .radio-group label {
+    margin-right: 16px;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  /* Styles for the issue dropdown */
+.issue-dropdown {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  .issue-dropdown label {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .issue-dropdown select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Style for the selected option in the dropdown */
+  .issue-dropdown select option {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Style when the dropdown is open */
+  .issue-dropdown select:focus {
+    outline: none;
+    border-color: #66afe9;
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+  }
+  

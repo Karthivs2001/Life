@@ -1,0 +1,37 @@
+<h1>Top brands for you</h1>
+
+<marquee behavior="scroll" direction="left" scrollamount="25">
+  <img src="https://png.pngtree.com/png-clipart/20220124/original/pngtree-boy-pulling-the-rope-png-image_7195887.png"width="20%" height="10%">
+    <img src="https://b.zmtcdn.com/data/brand_creatives/logos/80c09d718acddee05a655eb378bb442f_1617874818.png"width="13%" height="10%">
+    <img src="https://b.zmtcdn.com/data/brand_creatives/logos/194e35f28f89595d3d226f2e9c97095d_1701779712.png"width="13%" height="10%">
+    <img src="https://b.zmtcdn.com/data/brand_creatives/logos/1a985408ca7ad8fd097f2c47db9c5cb6_1611252779.png"width="13%" height="10%">
+    <img src="https://b.zmtcdn.com/data/brand_creatives/logos/9302c59eca94abbee01aec9acf9305f6_1676520651.png"width="13%" height="10%">
+    <img src="https://b.zmtcdn.com/data/brand_creatives/logos/11f0a050068db77b5b959dd97cc11965_1644900886.png"width="13%" height="10%">
+    <img src="https://b.zmtcdn.com/data/brand_creatives/logos/9c390005a3b36e2f209b5868d536973f_1639679267.png"width="13%" height="10%">
+    <img src="https://b.zmtcdn.com/data/brand_creatives/logos/6a11fd0f30c9fd9ceaff2f5b21f61d23_1617188211.png"width="13%" height="10%">
+</marquee>
+
+
+<div class="restaurant-container">
+    <div *ngFor="let cuisine of cuisines" class="cuisine-section">
+      <h2>{{ cuisine.type }}</h2>
+      <div class="restaurant-card" *ngFor="let restaurant of cuisine.restaurants">
+        <img [src]="restaurant.imageUrl" alt="{{ restaurant.name }} Image">
+        <h3>{{ restaurant.name }}</h3>
+        <p>Reviews: {{ restaurant.reviews }}</p>
+        
+        <div class="rating">
+          <span *ngFor="let star of [1, 2, 3, 4, 5]" [class.filled]="star <= restaurant.rating">&#9733;</span>
+        </div>
+       
+        <p>Items List</p>
+        <div class="dropdown">
+          <label for="items">Food Item</label>
+          <select id="items" name="items">
+            <option *ngFor="let item of restaurant.items" [value]="item">{{ item }}</option>
+          </select>
+        </div>
+    
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/022/722/061/small_2x/order-now-sale-label-banner-on-transparent-background-png.png"width="auto" height="250">
+         
+        </div>

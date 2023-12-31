@@ -1,0 +1,93 @@
+/* app.component.css */
+
+/* Toolbar Styles */
+.mat-toolbar.mat-primary {
+  background: rgba(125, 135, 137, 0.87);
+  color: #fff;
+}
+
+/* Style for the link */
+a.mat-button {
+  text-decoration: none; /* Remove underline */
+  display: flex; /* Align items horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Style for the image */
+a.mat-button img {
+  width: 110px; /* Adjust the width as needed */
+  height: 70px; /* Adjust the height as needed */
+  margin-right: 10px; /* Add some spacing between the image and text */
+}
+
+
+button.mat-icon-button {
+  color: white; /* Color for icon buttons */
+}
+
+/* Side Navigation Styles */
+.mat-sidenav-container {
+  height: 100vh; /* Set height to 100% of the viewport height */
+}
+
+.sidenav {
+  width: 250px; /* Set the width of the side navigation */
+  background-color: #263238; /* Dark background color */
+  color: white; /* Text color in side navigation */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.header {
+  padding: 16px;
+  border-bottom: 1px solid #37474f; /* Border at the bottom of the header */
+}
+
+.header h5 {
+  margin: auto;
+  font-size: 1.2em; /* Increase font size for header */
+}
+
+mat-nav-list a {
+  color: white; /* Text color for navigation items */
+  text-decoration: none; /* Remove underline from links */
+  display: block; /* Display as block for full width */
+  padding: 12px 16px; /* Add padding to navigation items */
+  transition: background 0.3s; /* Smooth background transition */
+}
+
+mat-nav-list a:hover {
+  background-color: #37474f; /* Darker background on hover */
+}
+
+/* Content Container Styles */
+mat-sidenav-content {
+  margin-left: 0; /* Reset margin for small screens */
+  padding: 16px;
+}
+
+.container {
+  padding: 16px;
+}
+
+/* Footer Styles */
+footer {
+  position: absolute;
+  background-color: #37474f; /* Dark background color for the footer */
+  color: white; /* Text color in the footer */
+  padding: 16px;
+  text-align: center;
+  position: fixed; /* Fixed position at the bottom */
+  width: 100%; /* Full width */
+  bottom: 0; /* Stick to the bottom */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+  .mat-sidenav-content {
+    margin-left: 0; /* Reset margin for small screens */
+  }
+
+  .sidenav {
+    width: 100%; /* Make the side navigation full width on small screens */
+  }
+}

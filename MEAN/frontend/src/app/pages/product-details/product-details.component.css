@@ -1,0 +1,60 @@
+/* Add this to your component's stylesheet */
+
+.back-to-result {
+  margin-bottom: 40px;
+}
+
+.mat-card-image {
+  width: 100%;
+  margin: 0;
+}
+
+mat-card {
+  max-width: 400px;
+  text-align: center;
+}
+
+.like-dislike-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+h2 {
+  color: #333;
+  font-size: 20px; /* Updated font size */
+}
+
+p {
+  color: #666;
+  margin: 5px 0;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button.like-button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+button.dislike-button {
+  background-color: #f44336; /* Red */
+  color: white;
+}
+
+button.add-to-cart-button {
+  background-color: #007bff; /* Blue, change to your preferred color */
+  color: white;
+}
+
+button:disabled {
+  background-color: #cccccc; /* Gray */
+  cursor: not-allowed;
+}

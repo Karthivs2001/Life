@@ -1,0 +1,23 @@
+<h1 style="text-align: center;">Restaurants</h1>\
+<h3 style="text-align: center;"></h3>
+
+<div class="restaurant-container">
+    <div class="restaurant-card" *ngFor="let restaurant of restaurant">
+      <img [src]="restaurant.imageUrl" alt="{{ restaurant.name }} Image">
+      <h2>Name :{{ restaurant.name }}</h2>
+      <p>Reviews:{{ restaurant.reviews}}</p>
+      <p>Address :{{ restaurant.address }}</p>
+      <div class="rating">
+        <span *ngFor="let star of [1, 2, 3, 4, 5]" [class.filled]="star <= restaurant.rating">&#9733;</span>
+      </div>
+      <button (click)="onSelect(restaurant)" >Details</button><br>
+      <b>Items-list</b>
+      <div class="dropdown">
+        <label for="items">Select Item:</label>
+        <select id="items" name="items">
+          <option *ngFor="let item of restaurant.items" [value]="item">{{ item }}</option>
+        </select>
+      </div>
+
+    </div>
+  </div>

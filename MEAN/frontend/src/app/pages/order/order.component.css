@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+}
+.thumbnail {
+  width: 80px;
+}
+
+.divider {
+  height: 20px;
+}
+ngx-paypal {
+  width: 100%;
+}
+
+/* Add this CSS to your component's styles or a global style file */
+
+.map-button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.map-button:hover {
+  background-color: orrange;
+  color:black;
+}
