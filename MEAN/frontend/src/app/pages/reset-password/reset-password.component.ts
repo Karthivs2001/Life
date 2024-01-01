@@ -14,6 +14,7 @@ export class ResetPasswordComponent implements OnInit {
   resetForm!: FormGroup;
   token!: string;
   errorMessage: string = '';
+  successMessage: string = ''; // Added success message property
 
   constructor(
     private fb: FormBuilder,
@@ -44,25 +45,27 @@ export class ResetPasswordComponent implements OnInit {
 
   submit(event?: Event) {
     if (event) {
-      event.preventDefault(); // Prevent default form submission behavior
+      event.preventDefault();
     }
 
     if (this.resetForm.valid) {
       const password = this.resetForm.get('password')?.value;
 
       this.authService.resetPassword(this.token, password).pipe(
-  finalize(() => {
-    this.router.navigate(['/login']);
-  })
-).subscribe(
-  (response) => {
-    console.log('Reset Password Response:', response);
-  },
-  (error) => {
-    console.error('Reset Password Error:', error);
-    this.errorMessage = 'An error occurred. Please try again.';
-  }
-);
+        finalize(() => {
+          if (!this.errorMessage) {
+            this.successMessage = 'Password reset successful. You can now login with your new password.';
+          }
+        })
+      ).subscribe(
+        (response) => {
+          console.log('Reset Password Response:', response);
+        },
+        (error) => {
+          console.error('Reset Password Error:', error);
+          this.errorMessage = 'An error occurred. Please try again.';
+        }
+      );
     }
   }
 }
