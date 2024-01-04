@@ -14,7 +14,7 @@ uploadRouter.post(
   isAdmin,
   upload.single('image'),
 
-  //asyncHandler(
+  
   async (req: Request, res: Response) => {
     cloudinary.config({
       cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -39,21 +39,5 @@ uploadRouter.post(
     const result = await streamUpload(req);
     res.send(result);
   }
-  //)
-);
+  );
 
-// LOCAL UPLOAD
-// const storage = multer.diskStorage({
-//   destination(req, file, cb) {
-//     cb(null, 'uploads/');
-//   },
-//   filename(req, file, cb) {
-//     cb(null, `${Date.now()}.jpg`);
-//   },
-// });
-
-// const upload = multer({ storage });
-
-// uploadRouter.post('/', isAuth, upload.single('image'), (req, res) => {
-//   res.send({ image: `/${req.file.path}` });
-// });

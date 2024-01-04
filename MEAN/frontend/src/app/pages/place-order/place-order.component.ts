@@ -56,7 +56,7 @@ export class PlaceOrderComponent implements OnInit {
     this.router.navigate(['/shipping']);
   }
   placeOrder() {
-    // place order
+   
     this.loadingPlaceOrder = true;
     this.orderService.create(this.cart).subscribe(
       (order) => {

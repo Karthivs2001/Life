@@ -10,7 +10,6 @@ import { CartService } from 'src/app/services/cart.service';
 @Component({
   selector: 'app-payment-method',
   templateUrl: './payment-method.component.html',
-  // encapsulation: ViewEncapsulation.None, //add this line
   styleUrls: ['./payment-method.component.css'],
 })
 export class PaymentMethodComponent implements OnInit {

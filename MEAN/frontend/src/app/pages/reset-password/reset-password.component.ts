@@ -1,4 +1,4 @@
-// reset-password.component.ts
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -14,8 +14,7 @@ export class ResetPasswordComponent implements OnInit {
   resetForm!: FormGroup;
   token!: string;
   errorMessage: string = '';
-  successMessage: string = ''; // Added success message property
-
+  successMessage: string = ''; 
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,

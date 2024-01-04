@@ -80,8 +80,8 @@ export class OrderHistoryComponent implements OnInit {
     this.orderService.cancelOrder(orderId).subscribe(
       () => {
         console.log('Order cancelled successfully');
-        // Perform any additional actions after successful cancellation
-        this.getOrderHisoty(); // Refresh the order history after cancellation
+        
+        this.getOrderHisoty(); 
       },
       (error) => {
         console.error('Error cancelling the order:', error);

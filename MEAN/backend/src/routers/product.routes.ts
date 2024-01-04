@@ -44,53 +44,6 @@ productRouter.get(
   })
 );
 
-// productRouter.get(
-//   "/paged",
-//   asyncHandler(async (req: Request, res: Response) => {
-//     const pageSize = 3;
-//     const page = Number(req.query.pageNumber) || 1;
-//     const name = (req.query.name || "") as string;
-//     const category = (req.query.category || "") as string;
-//     const order = (req.query.order || "") as string;
-//     const min =
-//       req.query.min && Number(req.query.min) !== 0 ? Number(req.query.min) : 0;
-//     const max =
-//       req.query.max && Number(req.query.max) !== 0 ? Number(req.query.max) : 0;
-//     const rating =
-//       req.query.rating && Number(req.query.rating) !== 0
-//         ? Number(req.query.rating)
-//         : 0;
-
-//     const nameFilter = name ? { name: { $regex: name, $options: "i" } } : {};
-//     const categoryFilter = category ? { category } : {};
-//     const priceFilter = min && max ? { price: { $gte: min, $lte: max } } : {};
-//     const ratingFilter = rating ? { rating: { $gte: rating } } : {};
-//     const sortOrder =
-//       order === "lowest"
-//         ? { price: 1 }
-//         : order === "highest"
-//         ? { price: -1 }
-//         : order === "toprated"
-//         ? { rating: -1 }
-//         : { _id: -1 };
-//     const count = await ProductModel.count({
-//       ...nameFilter,
-//       ...categoryFilter,
-//       ...priceFilter,
-//       ...ratingFilter,
-//     });
-//     const products = await ProductModel.find({
-//       ...nameFilter,
-//       ...categoryFilter,
-//       ...priceFilter,
-//       ...ratingFilter,
-//     })
-//       .sort(sortOrder)
-//       .skip(pageSize * (page - 1))
-//       .limit(pageSize);
-//     res.send({ products, page, pages: Math.ceil(count / pageSize) });
-//   })
-// );
 
 productRouter.get(
   "/categories",
@@ -103,8 +56,7 @@ productRouter.get(
 productRouter.get(
   "/seed",
   asyncHandler(async (req: Request, res: Response) => {
-    // await UserModel.remove();
-    // await ProductModel.remove();
+  
     const createdUsers = await UserModel.insertMany(users);
     const createdProducts = await ProductModel.insertMany(products);
     res.send({ createdUsers, createdProducts });

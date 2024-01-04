@@ -72,10 +72,9 @@ export class AuthService {
   }
 
   logout() {
-    // Clear the cart when the user logs out
+    
     this.cartService.clearItems();
 
-    // Remove user from local storage to log user out
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
   }

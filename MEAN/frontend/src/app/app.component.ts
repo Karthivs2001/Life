@@ -15,7 +15,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class AppComponent {
   @ViewChild('sidenav')
   sidenav!: MatSidenav;
-  categories: string[] = []; // Assuming categories is an array of strings
+  categories: string[] = [];
   searchForm: FormGroup;
   title = 'Mozeerat';
   itemsCount: number = 0;
@@ -44,14 +44,13 @@ export class AppComponent {
   }
 
   onSubmit() {
-    const nameSearchValue = this.searchForm.controls.name.value; // Use 'name' instead of 'category'
+    const nameSearchValue = this.searchForm.controls.name.value; 
 
-    // First, search by name
     this.router.navigate(['/search'], {
       queryParams: { category: nameSearchValue },
     });
 
-    // If the name search doesn't yield any results, search by category
+   
     if (nameSearchValue && this.categories.indexOf(nameSearchValue) === -1) {
       this.router.navigate(['/search'], {
         queryParams: { name: nameSearchValue },

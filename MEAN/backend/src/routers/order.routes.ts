@@ -110,18 +110,13 @@ orderRouter.get(
 orderRouter.get('/:id/download-report', async (req: Request, res: Response) => {
   try {
     const orderId = req.params.id;
-
-    // Fetch the specific order from the database
     const order = await OrderModel.findById(orderId).populate('items.product').populate('user');
 
     if (!order) {
       return res.status(404).send('Order not found');
     }
 
-    // Create a new PDF document
     const pdfDoc = new PDFDocument();
-
-    // Add content to the PDF
     pdfDoc.fontSize(16).text('Order Report', { align: 'center' });
     pdfDoc.fontSize(12).text(`Order ID: ${orderId}`);
     
@@ -141,44 +136,15 @@ orderRouter.get('/:id/download-report', async (req: Request, res: Response) => {
     pdfDoc.fontSize(12).text(`Mode of Payment: ${order.paymentMethod}`);
     pdfDoc.fontSize(12).text(`Order Status: ${order.isDelivered ? 'Delivered' : 'Not Delivered'}`);
 
-    // Set headers for the response to trigger download
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Content-Disposition', `attachment; filename=order-report-${orderId}.pdf`);
-
-    // Pipe the PDF document directly to the response stream
     pdfDoc.pipe(res);
-
-    // End the PDF document
     pdfDoc.end();
   } catch (error) {
     console.error('Error generating the report:', error);
     res.status(500).send('Internal Server Error');
   }
 })
-
-// orderRouter.put(
-//   '/:id/pay',
-//   isAuth,
-//   asyncHandler(async (req: Request, res: Response) => {
-//     const order = await OrderModel.findById(req.params.id).populate('user');
-
-//     if (order) {
-//       order.isPaid = true;
-//       order.paidAt = new Date(Date.now());
-//       order.paymentResult = {
-//         paymentId: req.body.id,
-//         status: req.body.status,
-//         update_time: req.body.update_time,
-//         email_address: req.body.email_address,
-//       };
-//       const updatedOrder = await order.save();
-
-//       res.send(updatedOrder);
-//     } else {
-//       res.status(404).send({ message: 'Order Not Found' });
-//     }
-//   })
-// );
 
 orderRouter.delete(
   '/:id',
@@ -195,57 +161,6 @@ orderRouter.delete(
   })
 );
 
-// orderRouter.put(
-//   '/:id/deliver',
-//   isAuth,
-//   isAdmin,
-//   asyncHandler(async (req: Request, res: Response) => {
-//     const order = await OrderModel.findById(req.params.id);
-//     if (order) {
-//       order.isDelivered = true;
-//       order.deliveredAt = new Date(Date.now());
-//       // order.deliveredAt = Date.now();
-
-//       const updatedOrder = await order.save();
-//       res.send({ message: 'Order Delivered', order: updatedOrder });
-//     } else {
-//       res.status(404).send({ message: 'Order Not Found' });
-//     }
-//   })
-// );
-
-orderRouter.delete(
-  '/cancel/:id',
-  isAuth,
-  asyncHandler(async (req: Request, res: Response) => {
-    const orderId = req.params.id;
-    const userId = req.user._id; // Assuming your user ID is available in the req.user object
-
-    const order = await OrderModel.findById(orderId);
-
-    if (order) {
-      // Check if the authenticated user is the owner of the order
-      if (typeof order.user === 'string' && order.user === userId) {
-        // Allow cancellation
-        const deleteOrder = await order.remove();
-        res.send({ message: 'Order Deleted', order: deleteOrder });
-      } else if (isDocument(order.user) && order.user.equals(userId)) {
-        // Allow cancellation
-        const deleteOrder = await order.remove();
-        res.send({ message: 'Order Deleted', order: deleteOrder });
-      } else {
-        // User is not the owner of the order
-        res.status(403).send({ message: 'Unauthorized: You do not have permission to cancel this order' });
-      }
-    } else {
-      // Order not found
-      res.status(404).send({ message: 'Order Not Found' });
-    }
-  })
-);
-
-// Type guard to check if an object is a Mongoose Document
 function isDocument(obj: any): obj is Document {
   return obj && typeof obj.equals === 'function';
 }
-

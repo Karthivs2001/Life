@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-// Material
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
@@ -48,17 +47,15 @@ import { SearchComponent } from './pages/search/search.component';
 import { AdminOrdersComponent } from './pages/admin-orders/admin-orders.component';
 import { AdminProductsComponent } from './pages/admin-products/admin-products.component';
 import { RatingComponent } from './components/rating/rating.component';
-// helper
+
 import { ErrorInterceptor } from './helpers/error.interceptor';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { AdminProductEditComponent } from './pages/admin-product-edit/admin-product-edit.component';
 import { AdminUsersComponent } from './pages/admin-users/admin-users.component';
 import { AdminUserEditComponent } from './pages/admin-user-edit/admin-user-edit.component';
-//import { RestaurantComponent } from './pages/restaurant/restaurant.component';
-//import { FoodCategoryComponent } from './pages/food-category/food-category.component';
-// import { FeedbackComponent } from './pages/feedback/feedback.component';
+
 import { AboutComponent } from './pages/about/about.component';
-//import { ResetsuccessfulComponent } from './pages/resetsuccessful/resetsuccessful.component';
+
 import { RecaptchaModule, RECAPTCHA_V3_SITE_KEY } from 'ng-recaptcha';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
@@ -86,11 +83,9 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
     AdminUsersComponent,
     AdminUserEditComponent,
     RatingComponent,
-    //RestaurantComponent,
-    //FoodCategoryComponent,
-    // FeedbackComponent,
+  
     AboutComponent,
-   // ResetsuccessfulComponent,
+   
     ForgotPasswordComponent,
     ResetPasswordComponent,
   ],

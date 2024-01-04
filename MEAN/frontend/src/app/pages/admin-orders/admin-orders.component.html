@@ -31,7 +31,7 @@
               {{ element.user.name }}
             </td>
           </ng-container>
-          <!-- Date Column -->
+          
           <ng-container matColumnDef="createdAt">
             <th mat-header-cell *matHeaderCellDef>DATE</th>
             <td mat-cell *matCellDef="let element">
@@ -39,7 +39,6 @@
             </td>
           </ng-container>
 
-          <!-- Price Column -->
           <ng-container matColumnDef="totalPrice">
             <th mat-header-cell *matHeaderCellDef>TOTAL PRICE</th>
             <td mat-cell *matCellDef="let element">
@@ -48,7 +47,7 @@
             
           </ng-container>
 
-          <!-- Is Paid Column -->
+         
           <ng-container matColumnDef="isPaid">
             <th mat-header-cell *matHeaderCellDef>PAID</th>
             <td mat-cell *matCellDef="let element">
@@ -56,7 +55,6 @@
             </td>
           </ng-container>
 
-          <!-- isDelivered Column -->
           <ng-container matColumnDef="isDelivered">
             <th mat-header-cell *matHeaderCellDef>DELIVERED</th>
             <td mat-cell *matCellDef="let element">
@@ -64,7 +62,7 @@
             </td>
           </ng-container>
 
-          <!-- Action Column -->
+         
           <ng-container matColumnDef="action">
             <th mat-header-cell *matHeaderCellDef>ACTION</th>
             <td mat-cell *matCellDef="let element">

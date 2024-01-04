@@ -121,7 +121,7 @@ userRouter.put(
       user.name = req.body.name || user.name;
       user.email = req.body.email || user.email;
       user.isAdmin = Boolean(req.body.isAdmin);
-      // user.isAdmin = req.body.isAdmin || user.isAdmin;
+     
       const updatedUser = await user.save();
       res.send({ message: 'User Updated', user: updatedUser });
     } else {
@@ -135,7 +135,6 @@ userRouter.post(
   asyncHandler(async (req: Request, res: Response) => {
     const { email } = req.body;
 
-    // Validate the email
     if (!email) {
       res.status(400).send({ message: 'Invalid request. Email is required.' });
       return;
@@ -148,7 +147,7 @@ userRouter.post(
         expiresIn: '3h',
       });
 
-      // Construct the reset link using baseUrl
+      
       const resetLink = `${baseUrl()}/reset-password/${token}`;
       console.log('Reset Link:', resetLink);
 

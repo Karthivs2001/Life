@@ -25,7 +25,7 @@ export const generateToken = (user: User) => {
 export const isAuth = (req: Request, res: Response, next: Function) => {
   const authorization = req.headers.authorization;
   if (authorization) {
-    const token = authorization.slice(7, authorization.length); // Bearer XXXXXX
+    const token = authorization.slice(7, authorization.length); 
     const decode = jwt.verify(
       token,
       process.env.JWT_SECRET || 'somethingsecret'

@@ -20,26 +20,22 @@ import { AdminProductsComponent } from './pages/admin-products/admin-products.co
 import { AdminProductEditComponent } from './pages/admin-product-edit/admin-product-edit.component';
 import { AdminUsersComponent } from './pages/admin-users/admin-users.component';
 import { AdminUserEditComponent } from './pages/admin-user-edit/admin-user-edit.component';
-//import { RestaurantComponent } from './pages/restaurant/restaurant.component';
-//import { FoodCategoryComponent } from './pages/food-category/food-category.component';
-//import { FeedbackComponent } from './pages/feedback/feedback.component';
+
 import { AboutComponent } from './pages/about/about.component';
 import { SuccessfulComponent } from './pages/successful/successful.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
-//import { ResetsuccessfulComponent } from './pages/resetsuccessful/resetsuccessful.component';
+
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'cart', component: CartComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  // { path: 'restaurant', component: RestaurantComponent },
-  //{ path: 'food-category', component: FoodCategoryComponent },
-  //{ path: 'feedback', component:FeedbackComponent},
+ 
   { path:'about',component:AboutComponent},
   { path:'successful',component:SuccessfulComponent},
   { path: 'forgot-password', component: ForgotPasswordComponent},
-  //{ path:'resetsuccessful',component:ResetsuccessfulComponent},
+  
   { path: 'reset-password/:token', component: ResetPasswordComponent },
   {
     path: 'profile',

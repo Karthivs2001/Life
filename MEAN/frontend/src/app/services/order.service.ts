@@ -67,7 +67,7 @@ export class OrderService {
   }
 
   downloadPurchaseReport(orderId: string): Observable<Blob> {
-    // Set responseType to 'blob' to handle binary data
+   
     return this.http.get(`${environment.apiUrl}/api/orders/${orderId}/download-report`, {
       responseType: 'blob',
       headers: new HttpHeaders({ 'Content-Type': 'application/pdf' }), // Set the appropriate content type

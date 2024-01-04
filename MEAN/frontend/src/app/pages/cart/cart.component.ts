@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from 'src/app/models/product';
+
 import { CartService } from 'src/app/services/cart.service';
 import { Cart, Item } from '../../models/cart';
 

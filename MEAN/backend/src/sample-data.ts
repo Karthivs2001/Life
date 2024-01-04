@@ -176,15 +176,10 @@ export const products: Product[] = [
 ];
 
 export const users: User[] = [
+ 
   {
-    name: "Joe",
+    name: "admin",
     email: "admin@example.com",
-    password: bcrypt.hashSync("123456"),
-    isAdmin: true,
-  },
-  {
-    name: "John",
-    email: "user@example.com",
     password: bcrypt.hashSync("123456"),
     isAdmin: false,
   },
